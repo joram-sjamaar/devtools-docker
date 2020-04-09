@@ -1,0 +1,37 @@
+version: '3.0'
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongo
+    
+  mongo-seed:
+    image: stefanwalther/mongo-seed
+    container_name: mongo-seed
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+    volumes:
+      - ./backend/config:/data
+    depends_on:
+      - mongodb
+    command: [
+      "mongoimport --host mongo --port 27017 --db joramsjamaar_people --mode upsert --type json --file /data/people.json --jsonArray"
+    ]
+
+  backend:
+    build: ./backend
+    container_name: backend
+    environment: 
+      - DB_HOST=mongo
+      - DB_NAME=joramsjamaar_people
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+    - "8080:80"

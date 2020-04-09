@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Pluk",
+        "street": "Petteflet",
+        "city": "Narnia",
+        "country": "Fantasieland"
+    },
+    {
+        "name": "Aagje",
+        "street": "Petteflet",
+        "city": "Narnia",
+        "country": "Fantasieland"
+    },
+    {
+        "name": "Harry Potter",
+        "street": "4 Privet Drive",
+        "city": "Little Whinging",
+        "country": "England"
+    },
+    {
+        "name": "Ron Weasley",
+        "street": "Ottery St Catchpole",
+        "city": "Devon",
+        "country": "England"
+    }
+]
