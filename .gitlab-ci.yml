@@ -22,5 +22,5 @@ deploy:
       - mkdir -p ~/.ssh
       - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
-      - scp -r -o StrictHostKeyChecking=no ./dist devtools-329@vps2644.directvps.nl:~/public_html/
+      - scp -r -o StrictHostKeyChecking=no ./frontend/dist devtools-329@vps2644.directvps.nl:~/public_html/
     
