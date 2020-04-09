@@ -90,6 +90,10 @@ th {
   color: #ccc !important;
 }
 
+td {
+  color: #aaa !important;
+}
+
 .table-bordered, td, th {
   border: 1px solid #444 !important;
 }
