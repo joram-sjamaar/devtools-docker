@@ -72,4 +72,26 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.body {
+  background: #222;
+}
+
+h1 {
+  color: #fff;
+  font-weight: 800;
+}
+
+thead th {
+  color: #eee;
+  border-bottom: #333;
+}
+
+th {
+  color: #ccc;
+}
+
+.table-bordered, td, th {
+  border: 1px solid #444;
+}
 </style>
