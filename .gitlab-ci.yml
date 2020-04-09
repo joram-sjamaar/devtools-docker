@@ -2,6 +2,7 @@ image: node:lts-alpine
 
 stages:
   - build
+  - deploy
 
 build:
   stage: build
@@ -13,3 +14,13 @@ build:
     paths:
       - frontend/dist
     expire_in: 1 week
+
+deploy:
+    stage: deploy
+    script:
+      - apk add --no-cache openssh
+      - mkdir -p ~/.ssh
+      - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - scp -r -o StrictHostKeyChecking=no ./dist devtools-329@vps2644.directvps.nl:~/public_html/
+    
